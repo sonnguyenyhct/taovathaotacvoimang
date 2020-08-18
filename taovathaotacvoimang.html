@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và thao tác với mảng</title>
+</head>
+<body>
+    <p>Sample Screen:</p>
+    <label>
+        <input type="text" id="txtValue">
+        <input type="button" name="Add" value="Add" onclick="add()">
+        <input type="button" name="Display" value="Display" onclick="display()">
+    </label>
+    <p id="element"></p>
+
+    <script>
+        let listArray = [];
+        let displayValue = "";
+
+        function add(){
+            let addValue = document.getElementById("txtValue").value;
+            listArray.push(addValue);
+            document.getElementById("txtValue").value = "";
+        }
+
+        function display() {
+            for (let count = 0; count < listArray.length; count++){
+                displayValue += "Element " + count + " = " + listArray[count] + "<br>";
+            }
+            document.getElementById("element").innerHTML = displayValue;
+        }
+    </script>
+
+</body>
+</html>
